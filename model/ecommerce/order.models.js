@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const orderItemSchema = mongoose.Schema({
     productId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId, // ASSIGN 24-DIGIT ID
         ref: "Product"
     },
     quantity: {
@@ -17,7 +17,7 @@ const orderItemSchema = mongoose.Schema({
 const orderSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Users",
+        ref: "Users",// FETCH USER DATA
         required: true
     },
 
