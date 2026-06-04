@@ -9,7 +9,8 @@ const orderItemSchema = mongoose.Schema({
         type: Number,
         required: true,
         default: 0,
-    }
+    },
+    
 }, { timestamps: true })
 
 
@@ -26,7 +27,18 @@ const orderSchema = new mongoose.Schema({
     price : {
      type : Number, 
      default : 0,
+     
+    },
+    address : {
+        type : String,
+        required : true,
+    },
+    status : {
+        type : String,
+        enum : ["PENDING" , "CANCELLED" , "DELIVERED"],
+        default : "PENDING",
     }
+
 }, { timestamps: true })
 
 export const Order = mongoose.model('Order', orderSchema)
